@@ -7,6 +7,5 @@ public class CrabMovement : MonoBehaviour
     void Update()
     {
         Enemy.SetDestination(Player.position);
-        Debug.Log(Player.position);
     }
 }

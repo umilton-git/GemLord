@@ -7,6 +7,5 @@ public class FlyerMovement : MonoBehaviour
     void Update()
     {
         Flyer.SetDestination(Player.position);
-        Debug.Log(Player.position);
     }
 }
