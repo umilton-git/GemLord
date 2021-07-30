@@ -12,13 +12,7 @@ public class FlyerFire : MonoBehaviour
      private float timer = 0f;
     void Update()
     {
-        
-        Debug.DrawLine(transform.position, player.position);
-        if (Physics.Linecast(transform.position, player.position, ~ignore))
-        {
-            Debug.Log("blocked");
-        }
-        else if(Physics.Linecast(transform.position, player.position, ignore) && timer <= 0)
+        if(Physics.Linecast(transform.position, player.position, ignore) && timer <= 0)
         {
             var clone = Instantiate(theBullet, transform.position, transform.rotation);
             clone.velocity = transform.TransformDirection(0, 0, Speed);
@@ -27,8 +21,7 @@ public class FlyerFire : MonoBehaviour
         }
         else if(Physics.Linecast(transform.position, player.position, ignore) && timer > 0)
         {
-                timer = timer - Time.deltaTime;
-                Debug.Log(timer);  
+                timer = timer - Time.deltaTime; 
         }
     }
 }
