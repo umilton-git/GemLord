@@ -6,7 +6,7 @@ public class DestroySelf : MonoBehaviour
 {
    void OnCollisionEnter(Collision col)
    {
-      if(col.gameObject.layer != 11)
+      if(col.gameObject.layer != 11 && col.gameObject.layer != 12)
       {
         Destroy(this.gameObject);
       }
