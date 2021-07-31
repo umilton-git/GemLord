@@ -6,6 +6,9 @@ public class DealDamageCrab : MonoBehaviour
 {
     public float damageCooldown = 3;
     private float damageCooldownCount = 0;
+    public GameObject Player;
+    public GameObject[] hearts;
+
    void OnTriggerEnter(Collider collision)
     {
         if(collision.tag == "Player")
@@ -27,6 +30,29 @@ public class DealDamageCrab : MonoBehaviour
         {
             damageCooldownCount = damageCooldownCount - Time.deltaTime;
         }
+
+        var health = Player.GetComponent<Health>();
+        if(health.currentHealth < 1)
+        {
+            Destroy(hearts[0].gameObject);
+        }
+        else if(health.currentHealth < 2)
+        {
+            Destroy(hearts[1].gameObject);
+        }
+        else if(health.currentHealth < 3)
+        {
+            Destroy(hearts[2].gameObject);
+        }
+        else if(health.currentHealth < 4)
+        {
+            Destroy(hearts[3].gameObject);
+        }
+        else if(health.currentHealth < 5)
+        {
+            Destroy(hearts[4].gameObject);
+        }
+        
 
     }
 }

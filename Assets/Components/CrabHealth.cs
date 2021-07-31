@@ -19,6 +19,7 @@ public class CrabHealth : MonoBehaviour
         if(Health == 0)
         {
             Destroy(this.gameObject);
+            EnemyCount.enemyCount -= 1;
         }
     }
 }

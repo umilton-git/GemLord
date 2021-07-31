@@ -4,6 +4,36 @@ using UnityEngine;
 
 public class DealDamage : MonoBehaviour
 {
+    public GameObject[] hearts;
+    public GameObject Player;
+    
+
+    void Update()
+    {
+        var health = Player.GetComponent<Health>();
+        if(health.currentHealth < 1)
+        {
+            Destroy(hearts[0].gameObject);
+        }
+        else if(health.currentHealth < 2)
+        {
+            Destroy(hearts[1].gameObject);
+        }
+        else if(health.currentHealth < 3)
+        {
+            Destroy(hearts[2].gameObject);
+        }
+        else if(health.currentHealth < 4)
+        {
+            Destroy(hearts[3].gameObject);
+        }
+        else if(health.currentHealth < 5)
+        {
+            Destroy(hearts[4].gameObject);
+        }
+        
+
+    }
 
     void OnTriggerEnter(Collider collision)
     {
