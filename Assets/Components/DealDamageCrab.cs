@@ -18,7 +18,7 @@ public class DealDamageCrab : MonoBehaviour
             if(health != null && damageCooldownCount <= 0)
             {
                 health.TakeDamage();
-                Debug.Log(health.currentHealth);
+                Debug.Log(Health.currentHealth);
                 damageCooldownCount = damageCooldown;
             }
         }
@@ -32,23 +32,23 @@ public class DealDamageCrab : MonoBehaviour
         }
 
         var health = Player.GetComponent<Health>();
-        if(health.currentHealth < 1)
+        if(Health.currentHealth < 1)
         {
             Destroy(hearts[0].gameObject);
         }
-        else if(health.currentHealth < 2)
+        else if(Health.currentHealth < 2)
         {
             Destroy(hearts[1].gameObject);
         }
-        else if(health.currentHealth < 3)
+        else if(Health.currentHealth < 3)
         {
             Destroy(hearts[2].gameObject);
         }
-        else if(health.currentHealth < 4)
+        else if(Health.currentHealth < 4)
         {
             Destroy(hearts[3].gameObject);
         }
-        else if(health.currentHealth < 5)
+        else if(Health.currentHealth < 5)
         {
             Destroy(hearts[4].gameObject);
         }

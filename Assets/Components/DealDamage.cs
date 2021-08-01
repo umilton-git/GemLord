@@ -11,23 +11,23 @@ public class DealDamage : MonoBehaviour
     void Update()
     {
         var health = Player.GetComponent<Health>();
-        if(health.currentHealth < 1)
+        if(Health.currentHealth < 1)
         {
             Destroy(hearts[0].gameObject);
         }
-        else if(health.currentHealth < 2)
+        else if(Health.currentHealth < 2)
         {
             Destroy(hearts[1].gameObject);
         }
-        else if(health.currentHealth < 3)
+        else if(Health.currentHealth < 3)
         {
             Destroy(hearts[2].gameObject);
         }
-        else if(health.currentHealth < 4)
+        else if(Health.currentHealth < 4)
         {
             Destroy(hearts[3].gameObject);
         }
-        else if(health.currentHealth < 5)
+        else if(Health.currentHealth < 5)
         {
             Destroy(hearts[4].gameObject);
         }
@@ -44,7 +44,7 @@ public class DealDamage : MonoBehaviour
             if(health != null)
             {
                 health.TakeDamage();
-                Debug.Log(health.currentHealth);
+                Debug.Log(Health.currentHealth);
                 Destroy(this);
             }
         }

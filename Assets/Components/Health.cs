@@ -5,7 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public int maxHealth = 5;
-    public int currentHealth;
+    public static int currentHealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,11 +15,6 @@ public class Health : MonoBehaviour
     public void TakeDamage()
     {
         currentHealth -= 1;
-
-        if(currentHealth <= 0)
-        {
-            // Add GameOver Here
-        }
     }
 
     public void addHealth()
